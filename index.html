@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Sembako - UMKM Terpercaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-icon">🏪</span>
+                    <div class="logo-text">
+                        <h1>Toko Sembako</h1>
+                        <p>Madura Jaya</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#about" class="nav-link">Tentang Kami</a>
+                <a href="#products" class="nav-link">Produk</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 <span id="cartCount">0</span>
+                </button>
+            </nav>
+            
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" title="Buka menu navigasi">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Selamat Datang di Toko Sembako Madura Jaya</h1>
+                    <p>Menyediakan kebutuhan sembako berkualitas dengan harga terjangkau untuk keluarga Indonesia sejak 2010</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('products')">Lihat Produk</button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('contact')">Hubungi Kami</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.pinimg.com/736x/74/1f/66/741f667ca44b02444223f6da26f59352.jpg" alt="Toko Sembako">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Mengapa Memilih Kami?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🕒</div>
+                    <h3>Buka Setiap Hari</h3>
+                    <p>Melayani Anda 7 hari dalam seminggu dari jam 06:00 - 22:00</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>Produk Berkualitas</h3>
+                    <p>Semua produk dijamin fresh dan berkualitas tinggi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Antar Gratis</h3>
+                    <p>Gratis ongkos kirim untuk pembelian minimal Rp100.000</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Harga Terjangkau</h3>
+                    <p>Harga kompetitif dan terjangkau untuk semua kalangan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Tentang Toko Berkah</h2>
+                    <p>Toko Berkah adalah UMKM yang telah melayani masyarakat dengan menyediakan kebutuhan sembako berkualitas sejak tahun 2010. Kami berkomitmen untuk memberikan produk terbaik dengan harga yang terjangkau bagi seluruh keluarga Indonesia.</p>
+                    
+                    <div class="vision-mission">
+                        <div class="vm-item">
+                            <h3>🎯 Visi Kami</h3>
+                            <p>Menjadi toko sembako terdepan yang menyediakan kebutuhan pokok berkualitas tinggi dengan pelayanan prima.</p>
+                        </div>
+                        <div class="vm-item">
+                            <h3>❤️ Misi Kami</h3>
+                            <ul>
+                                <li>Menyediakan produk sembako berkualitas dengan harga terjangkau</li>
+                                <li>Memberikan pelayanan terbaik kepada setiap pelanggan</li>
+                                <li>Mendukung ekonomi lokal dan UMKM sekitar</li>
+                                <li>Membangun kepercayaan masyarakat dalam jangka panjang</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/toko.jpg" alt="Tentang Kami">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Produk Kami</h2>
+            <p class="section-subtitle">Temukan berbagai kebutuhan sembako berkualitas dengan harga terjangkau</p>
+            
+            <div class="product-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">Semua</button>
+                <button class="filter-btn" onclick="filterProducts('bahan-pokok')">Bahan Pokok</button>
+                <button class="filter-btn" onclick="filterProducts('protein')">Protein</button>
+                <button class="filter-btn" onclick="filterProducts('sayuran')">Sayuran</button>
+                <button class="filter-btn" onclick="filterProducts('bumbu')">Bumbu</button>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Alamat Toko</h3>
+                            <p>kuwung, karangrejo, kec. Gempol<br>Pasuruan<br>Jawa Timur 67155</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Telepon & WhatsApp</h3>
+                            <p>Telepon: (021) 555-0123<br>WhatsApp: 08123456789</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Minggu<br>Buka 24 Jam<br>Buka Setiap Hari</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Kirim Pesan</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Nama Lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" placeholder="Pesan Anda" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Keranjang Belanja</h3>
+                <button class="close-btn" onclick="toggleCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems"></div>
+                <div class="cart-total">
+                    <strong>Total: Rp <span id="cartTotal">0</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="clearCart()">Kosongkan</button>
+                <button class="btn btn-primary" onclick="showOrderForm()">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Formulir Pemesanan</h3>
+                <button class="close-btn" onclick="closeOrderForm()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label for="customerName">Nama Lengkap *</label>
+                        <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerPhone">Nomor Telepon *</label>
+                        <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customerAddress">Alamat Lengkap *</label>
+                        <textarea id="customerAddress" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Metode Pembayaran</label>
+                        <select id="paymentMethod">
+                            <option value="cod">Bayar di Tempat (COD)</option>
+                            <option value="transfer">Transfer Bank</option>
+                            <option value="ewallet">E-Wallet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderNotes">Catatan Pesanan</label>
+                        <textarea id="orderNotes" rows="2" placeholder="Catatan khusus untuk pesanan Anda"></textarea>
+                    </div>
+                    <div class="order-summary">
+                        <h4>Ringkasan Pesanan:</h4>
+                        <div id="orderSummary"></div>
+                        <div class="order-total">
+                            <strong>Total: Rp <span id="orderTotal">0</span></strong>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeOrderForm()">Batal</button>
+                <button class="btn btn-primary" onclick="submitOrder()">Konfirmasi Pesanan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🏪</span>
+                        <div>
+                            <h3>Toko Berkah</h3>
+                            <p>Kebutuhan Harian Terlengkap</p>
+                        </div>
+                    </div>
+                    <p>Melayani kebutuhan sembako keluarga dengan produk berkualitas dan harga terjangkau sejak 2010.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Jam Operasional</h4>
+                    <p>Senin - Minggu<br>24 Jam<br><strong>Buka Setiap Hari</strong></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak</h4>
+                    <p>kuwung, Kerangrejo, kec. Gempol<br>Pasuruan, Jawa Timur<br>Telp: (021) 555-0123<br>WA: 08123456789</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Media Sosial</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="https://wa.me/628123456789" class="social-link">WhatsApp</a> 
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Toko Berkah. Semua hak dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+   
+    <!-- Tombol WhatsApp -->
+<a href="https://wa.me/6288217440722" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat di WhatsApp">
+    💬 Hubungi via WhatsApp
+</a>
+
+</a>
+
+<style>
+    .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        color: white;
+        padding: 12px 16px;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        z-index: 9999;
+        transition: background-color 0.3s ease;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .whatsapp-float:hover {
+        background-color: #128C7E;
+    }
+</style>
+
+</body>
+</html>
